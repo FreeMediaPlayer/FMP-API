@@ -1,0 +1,9 @@
+{NeoBook Function}
+Version=5,80
+Language=NeoBook
+{End}
+
+InternetGet "http://fmp.square7.ch/api/neobook.php?id=[id]" "[fmp-api]" "HideProgress"
+StrReplace "[fmp-api]" "<br />" "" "[fmp-api]" "CaseSensitive"
+FileWrite "[PubDir]fmp.api" "All" "[fmp-api]"
+LoadVariables "[PubDir]fmp.api"
